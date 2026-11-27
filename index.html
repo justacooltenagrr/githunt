@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/githunt-icon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHunt — Free Software & Direct Repo Links</title>
+    <meta name="description" content="GitHunt discovers the best open-source alternatives to expensive software. Direct 1-click downloads, verified GitHub repository links, and zero telemetry." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Permanent Netlify Badge & Sticker Removal -->
+    <style>
+      #nl-badge-frame,
+      iframe[title*="Netlify"],
+      iframe[id*="nl-badge"],
+      .nl-badge,
+      [data-nl-ready],
+      div[id*="netlify"],
+      iframe[src*="netlify"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        clip-path: circle(0) !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+      }
+    </style>
+    <script>
+      (function() {
+        function purgeBadge() {
+          var frames = document.querySelectorAll('#nl-badge-frame, iframe[title*="Netlify"], iframe[id*="nl-badge"], [data-nl-ready]');
+          for (var i = 0; i < frames.length; i++) {
+            frames[i].remove();
+          }
+        }
+        var observer = new MutationObserver(function(mutations) {
+          purgeBadge();
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener('DOMContentLoaded', purgeBadge);
+        window.addEventListener('load', purgeBadge);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#060810] text-[#F4F4F5] antialiased selection:bg-[#FF6B2C] selection:text-white overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
